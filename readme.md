@@ -2,6 +2,178 @@
 
 > Put a table of contents in your files!
 
+
+### Before:
+```css
+/* > HTML5 display-role reset for older browsers
+============================================================================= */
+button, input, select, textarea {
+  width:auto;
+  overflow:visible;
+    margin:0;
+    font-size:100%;
+    vertical-align:baseline;
+}
+
+textarea {
+    overflow:auto;
+    vertical-align:text-top;
+}
+
+/* >> Buttons
+============================================================================= */
+button,
+a.button,
+input[type='reset'],
+input[type='button'],
+input[type='submit'] {
+    background-color:#eaeaea;
+    border:1px solid #ccc;
+    color:#555;
+}
+
+button:hover,
+a.button:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
+input[type='submit']:hover {
+    background-color:#ececec;
+    border:1px solid #bbb;
+    color:#555;
+}
+
+/* >>> Buttons (Call to Action)
+============================================================================= */
+.call-to-action {
+    text-align:center;
+}
+
+.call-to-action a.button {
+    font-size:24px;
+    padding:15px 35px;
+}
+
+.call-to-action a.button:hover {
+    text-decoration:none;
+}
+
+.ie7 .call-to-action a.button {
+    padding:15px 35px 18px 35px;
+}
+
+/* >>> Buttons (Sizes)
+============================================================================= */
+.small a.button {
+    font-size:10px;
+    padding:3px 6px;
+}
+
+.medium a.button {
+    font-size:16px;
+    padding:8px 16px;
+}
+
+.large a.button {
+    font-size:18px;
+    padding:10px 35px;
+}
+
+.xlarge a.button {
+    font-size:24px;
+    padding:12px 55px;
+}
+```
+
+### After:
+```css
+/* TABLE OF CONTENTS
+
+    HTML5 display-role reset for older browsers ......................... 10
+        Buttons ......................................................... 25
+            Buttons (Call to Action) .................................... 47
+            Buttons (Sizes) ............................................. 66
+
+============================================================================= */
+
+/* > HTML5 display-role reset for older browsers
+============================================================================= */
+button, input, select, textarea {
+  width:auto;
+    overflow:visible;
+    margin:0;
+    font-size:100%;
+    vertical-align:baseline;
+}
+
+textarea {
+    overflow:auto;
+    vertical-align:text-top;
+}
+
+/* >> Buttons
+============================================================================= */
+button,
+a.button,
+input[type='reset'],
+input[type='button'],
+input[type='submit'] {
+    background-color:#eaeaea;
+    border:1px solid #ccc;
+    color:#555;
+}
+
+button:hover,
+a.button:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
+input[type='submit']:hover {
+    background-color:#ececec;
+    border:1px solid #bbb;
+    color:#555;
+}
+
+/* >>> Buttons (Call to Action)
+============================================================================= */
+.call-to-action {
+    text-align:center;
+}
+
+.call-to-action a.button {
+    font-size:24px;
+    padding:15px 35px;
+}
+
+.call-to-action a.button:hover {
+    text-decoration:none;
+}
+
+.ie7 .call-to-action a.button {
+    padding:15px 35px 18px 35px;
+}
+
+/* >>> Buttons (Sizes)
+============================================================================= */
+.small a.button {
+    font-size:10px;
+    padding:3px 6px;
+}
+
+.medium a.button {
+    font-size:16px;
+    padding:8px 16px;
+}
+
+.large a.button {
+    font-size:18px;
+    padding:10px 35px;
+}
+
+.xlarge a.button {
+    font-size:24px;
+    padding:12px 55px;
+}
+```
+
 ## LICENSE
 
 Copyright (C) 2013  Jean Pimentel <contato@jeanpimentel.com.br>
