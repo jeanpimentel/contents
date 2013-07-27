@@ -9,6 +9,7 @@ clean:
 	@echo "Cleaning..."
 	@find . -name '*.py[cod]' -delete
 	@find . -name '.coverage' -delete
+	@echo "OK"
 
 unit: clean
 	@echo "Running unit tests..."
@@ -16,7 +17,7 @@ unit: clean
 
 functional: clean
 	@echo "Running functional tests..."
-	@nosetests --stop --verbose --nocapture tests/functional
+	@nosetests --with-coverage --cover-erase --cover-package=contents --stop --verbose --nocapture tests/functional
 
 smell: clean
 	@echo "Smelling code..."
@@ -24,3 +25,4 @@ smell: clean
 	@-pep8 contents
 	@echo "\n- Pylint"
 	@-pylint --output-format=parseable --reports=n --include-ids=y --disable=C0103,C0111 contents
+	@echo "OK!"
