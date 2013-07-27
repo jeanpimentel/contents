@@ -1,4 +1,4 @@
-all: 
+all:
 
 test: deps clean unit functional
 
@@ -14,13 +14,13 @@ unit: clean
 	@echo "Running unit tests..."
 	@nosetests --with-coverage --cover-erase --cover-package=contents --stop --verbose --nocapture tests/unit
 
-functional: clean 
+functional: clean
 	@echo "Running functional tests..."
 	@nosetests --stop --verbose --nocapture tests/functional
 
 smell: clean
 	@echo "Smelling code..."
 	@echo "\n- PEP 8"
-	@-pep8 lib 
+	@-pep8 contents
 	@echo "\n- Pylint"
-	@-pylint --output-format=parseable --reports=n --include-ids=y --disable=C0103,C0111 lib	
+	@-pylint --output-format=parseable --reports=n --include-ids=y --disable=C0103,C0111 contents
