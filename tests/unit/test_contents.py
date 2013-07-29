@@ -113,6 +113,41 @@ def test_find_toc_with_toc():
     contents.find_toc(with_toc).should.be.equal({'start': 7, 'end': 14})
 
 
+def test_find_toc_with_toc_marker():
+
+    with_toc = {
+        1: '/**',
+        2: ' * Project X',
+        3: ' * Author: Jean Pimentel',
+        4: ' * Date: August, 2012',
+        5: ' */',
+        6: '',
+        7: '/* Table of Contents',
+        8: '====================================================== */',
+        9: '',
+        10: 'Toc toc! Penny! Toc toc! Penny! Toc toc! Penny!'
+    }
+
+    contents.find_toc(with_toc).should.be.equal({'start': 7, 'end': 8})
+
+
+def test_find_toc_with_one_line_toc_marker():
+
+    with_toc = {
+        1: '/**',
+        2: ' * Project X',
+        3: ' * Author: Jean Pimentel',
+        4: ' * Date: August, 2012',
+        5: ' */',
+        6: '',
+        7: '/* Table of Contents */',
+        8: '',
+        9: 'Toc toc! Penny! Toc toc! Penny! Toc toc! Penny!'
+    }
+
+    contents.find_toc(with_toc).should.be.equal({'start': 7, 'end': 7})
+
+
 def test_find_toc_without_toc():
 
     without_toc = {

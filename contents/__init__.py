@@ -26,6 +26,7 @@ import re
 RE_FIND_LEVELS = ur'''\/\* [=]*(>{1,6}) [=]*([^<=*]+).*$'''
 RE_EXIST_TABLE_BEGIN = ur'''(TABLE OF CONTENTS)$'''
 RE_EXIST_TABLE_END = ur'''^=* \*\/$'''
+RE_EXIST_TABLE_MARK = ur'''\/\* (TABLE OF CONTENTS) \*\/'''
 
 
 def contents(input_file):
@@ -96,6 +97,13 @@ def find_toc(lines):
     end = -1
 
     for line in lines:
+        # check for table of contents mark
+        matches = re.compile(RE_EXIST_TABLE_MARK, re.M | re.IGNORECASE) \
+                    .findall(lines[line])
+        if len(matches) > 0:
+            start = end = line
+            break
+
         if start == -1:
             matches = re.compile(RE_EXIST_TABLE_BEGIN, re.M | re.IGNORECASE) \
                         .findall(lines[line])
