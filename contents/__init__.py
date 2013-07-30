@@ -49,12 +49,12 @@ def contents(input_file):
     if len(new) == 0:
         return
 
-    if actual['start'] != actual['end']:
-        difference = (len(new) + 4) - (actual['end'] - actual['start'] + 1)
+    if actual['start'] == 1 and actual['start'] == actual['end']:
+        difference = (len(new) + 4)
         lines = update_lines(lines, actual['start'], difference)
     else:
-        difference = (len(new) + 4)
-        lines = update_lines(lines, 1, difference)
+        difference = (len(new) + 4) - (actual['end'] - actual['start'] + 1)
+        lines = update_lines(lines, actual['start'], difference)
 
     new = update_toc(new, difference)
     new = build_toc(new, actual['start'])
