@@ -41,9 +41,11 @@ def test_find_level():
         [['''/* > =First Level <''', 1],                 first_level],
         [['''/* > First Level < */''', 1],               first_level],
         [['''/* > =First Level < */''', 1],              first_level],
+        [['''/*   > First Level <   */''', 1],           first_level],
         [['''/* >> Second Level <<''', 1],               second_level],
         [['''/* ===>> =Second Level <<====''', 1],       second_level],
         [['''/* ===>> =Second Level <==== */''', 1],     second_level],
+        [['''/* === >> Second Level << === */''', 1],    second_level],
         [['''/* >>> Third Level <<<''', 1],              third_level],
         [['''/* ===>>> =Third Level ====''', 1],         third_level],
         [['''/* ===>>> Third Level <<<==== */''', 1],    third_level],
@@ -67,7 +69,6 @@ def test_find_level_invalid():
     provider = [
         ['''/* >>>>>>> Seventh Level? */''', 1],
         ['''/* None Level? */''', 1],
-        ['''/* >< Invalid */''', 1],
         ['''/* > */''', 1],
     ]
 

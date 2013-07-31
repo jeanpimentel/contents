@@ -23,7 +23,7 @@ import sys
 import os
 import re
 
-RE_FIND_LEVELS = ur'''\/\* [=]*(>{1,6}) [=]*([^<=*]+).*$'''
+RE_FIND_LEVELS = ur'''\/\*(?:[^>]*)([>]+)\W*([a-zA-Z0-9_\-():; ]+)'''
 RE_EXIST_TABLE_BEGIN = ur'''(TABLE OF CONTENTS)$'''
 RE_EXIST_TABLE_END = ur'''^=* \*\/$'''
 RE_EXIST_TABLE_MARK = ur'''\/\* (TABLE OF CONTENTS) \*\/'''
@@ -79,11 +79,14 @@ def find_level(line, lineno):
     matches = re.compile(RE_FIND_LEVELS, re.M).findall(line)
     if len(matches) > 0:
         match = matches.pop()
-        return {
-            'level': len(match[0]),
-            'text': match[1].strip(),
-            'line': lineno
-        }
+        level = len(match[0])
+        text = match[1].strip()
+        if 0 < level < 7 and len(text):
+            return {
+                'level': level,
+                'text': text,
+                'line': lineno
+            }
 
 
 def sort_lines(d):
