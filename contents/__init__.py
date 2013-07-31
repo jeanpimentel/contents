@@ -23,7 +23,7 @@ import sys
 import os
 import re
 
-RE_FIND_LEVELS = ur'''\/\*(?:[^>]*)([>]+)\W*([a-zA-Z0-9_\-():; ]+)'''
+RE_FIND_LEVELS = ur'''\/\*(?:[^>|^#]*)(>+|#+)\W*([a-zA-Z0-9_\-():;,' ]+)'''
 RE_EXIST_TABLE_BEGIN = ur'''(TABLE OF CONTENTS)$'''
 RE_EXIST_TABLE_END = ur'''^=* \*\/$'''
 RE_EXIST_TABLE_MARK = ur'''\/\* (TABLE OF CONTENTS) \*\/'''
