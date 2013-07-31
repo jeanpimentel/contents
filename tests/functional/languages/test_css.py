@@ -5,15 +5,7 @@ from contents import contents
 
 def test_css():
 
-    content = '''/* TABLE OF CONTENTS
-
-    HTML5 display-role reset for older browsers ......................... 16
-        Buttons ......................................................... 25
-            Buttons (Call to Action) .................................... 36
-            Buttons (Sizes) ............................................. 46
-
-============================================================================= */
-/**
+    content = '''/**
  * Project X
  * Author: Jean Pimentel
  * Date: August, 2013
