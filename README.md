@@ -8,6 +8,41 @@
 
 ## How it works
 
+__Contents__ searches for sections in file and generates a table of contents.
+
+Sections are defined by ```>``` or ```#``` and the levels are provided by the number of chars, from 1 to 6.
+
+```
+Examples of supported formats:
+
+/* > First Level
+/* >> Second Level <<
+/* # First Level
+/* ## Second Level
+/* ###### Sixth Level
+```
+
+By default, the script inserts the TOC at the beginning of the file.
+
+This position can be defined at first time, using the ```/* Table of Contents */``` markup:
+
+```css
+/**
+ * Project X
+ * Author: Jean Pimentel
+ * Date: August, 2013
+ */
+
+/* Table of Contents */
+
+body {}
+```
+
+Another way is move the generated TOC to another position in the file. When __contents__ run again, will find and respect the position defined previously.
+
+
+## Example
+
 ### Before:
 ```css
 /* > HTML5 display-role reset for older browsers
