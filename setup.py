@@ -34,5 +34,8 @@ if __name__ == '__main__':
         author='Jean Pimentel',
         author_email='contato@jeanpimentel.com.br',
         url='https://github.com/jeanpimentel/contents',
-        packages=find_packages(exclude=['*tests*'])
+        packages=find_packages(exclude=['*tests*']),
+        entry_points={
+            'console_scripts': ['contents = contents:main'],
+        },
     )

@@ -174,8 +174,12 @@ def save_file(filename, lines):
     f.close()
 
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) > 1:
         contents(sys.argv[1])
     else:
-        raise Exception('No input file')
+        sys.exit('Usage: contents FILE')
+
+
+if __name__ == "__main__":
+    main()
