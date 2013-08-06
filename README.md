@@ -3,6 +3,11 @@
 > Put a table of contents in your files!
 
 
+#### Note:
+![](https://cdn1.iconfinder.com/data/icons/16x16-free-toolbar-icons/16/58.png) **Currently, only css/javascript files are supported. In fact, files of languages with __/* BlockComment */__ syntax. I'm working on it.**
+
+## How it works
+
 ### Before:
 ```css
 /* > HTML5 display-role reset for older browsers
@@ -174,7 +179,32 @@ input[type='submit']:hover {
 }
 ```
 
-## LICENSE
+
+## Installation
+
+- Simple, using PyPI:
+
+```
+user@machine:~$ [sudo] pip install contents
+```
+
+- or download the source and:
+
+```
+user@machine:~$ [sudo] python setup.py install
+```
+
+
+## Usage
+
+- Command line:
+
+```
+user@machine:~$ contents my-file.css
+```
+
+
+## License
 
 Copyright (C) 2013  Jean Pimentel <contato@jeanpimentel.com.br>
 
