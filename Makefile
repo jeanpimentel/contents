@@ -8,8 +8,9 @@ deps:
 clean:
 	@echo "Cleaning..."
 	@find . -name '*.py[cod]' -delete
+	@find . -name '*.so' -delete
 	@find . -name '.coverage' -delete
-	@echo "OK"
+	@rm -rf *.egg-info *.log build dist MANIFEST
 
 unit: clean
 	@echo "Running unit tests..."
