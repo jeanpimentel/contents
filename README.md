@@ -1,4 +1,4 @@
-# Contents
+# Contents [![Build Status](https://travis-ci.org/jeanpimentel/contents.png?branch=master)](https://travis-ci.org/jeanpimentel/contents)
 
 > Put a table of contents in your files!
 
